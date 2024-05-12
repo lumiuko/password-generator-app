@@ -40,12 +40,13 @@ export default function Options({ password, generatePassword }) {
   return (
     <form className="bg-dark-gray p-4 flex flex-col gap-8 md:p-8 md:pt-6" onSubmit={handleSubmit}>
       <div className="flex flex-col gap-2 md:gap-4">
-        <label className="flex justify-between items-center">
-          <p>Character Length</p>
-          <p className="text-neon-green text-m leading-m md:text-l md:leading-[2.625rem]">{length}</p>
+        <label htmlFor="length" className="flex justify-between items-center">
+          <span>Character Length</span>
+          <span className="text-neon-green text-m leading-m md:text-l md:leading-[2.625rem]">{length}</span>
         </label>
         <input
           name="length"
+          id="length"
           type="range"
           className="slider"
           min={0}
