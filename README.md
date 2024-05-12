@@ -26,12 +26,12 @@ Users should be able to:
 
 ### Screenshot
 
-![](./screenshot.jpg)
+![](https://i.imgur.com/1nXZyH6.png)
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/password-generator-app-using-react-and-tailwind-r5f1_h9uuS](https://www.frontendmentor.io/solutions/password-generator-app-using-react-and-tailwind-r5f1_h9uuS)
+- Live Site URL: [https://react-passgen-app.vercel.app/](https://react-passgen-app.vercel.app/)
 
 ## My process
 
