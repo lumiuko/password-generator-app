@@ -64,3 +64,8 @@ body {
 .slider::-moz-range-thumb:active {
   cursor: grabbing;
 }
+
+.display {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

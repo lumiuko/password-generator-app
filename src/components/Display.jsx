@@ -17,7 +17,7 @@ export default function Display({ password }) {
 
   return (
     <section className="bg-dark-gray p-4 flex justify-between items-center md:px-8 md:py-5">
-      <h2 className={`text-m leading-m md:text-l md:leading-l ${password ? 'text-almost-white' : 'text-almost-white/25'}`}>
+      <h2 className={`display mr-2 text-m leading-m md:text-l md:leading-l ${password ? 'text-almost-white' : 'text-almost-white/25'}`}>
         {password || 'P4$5W0rD!'}
       </h2>
       <div className="flex items-center gap-4 uppercase">
