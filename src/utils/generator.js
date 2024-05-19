@@ -1,6 +1,6 @@
 import dictionary from './dictionary'
 
-export function generate(length, options) {
+export function generatePassword(length, options) {
   const characters = Object.entries(options)
     .filter(([, value]) => value)
     .map(([key]) => dictionary[key])
