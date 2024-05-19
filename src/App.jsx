@@ -19,7 +19,7 @@ function App() {
       <h1 className="text-center text-gray md:text-m md:leading-m">Password Generator</h1>
       <div className="flex flex-col gap-4 md:gap-6">
         <Display password={password} />
-        <Options password={password} handleSubmit={handleSubmit} />
+        <Options password={password} generatePassword={handleSubmit} />
       </div>
     </Container>
   )
