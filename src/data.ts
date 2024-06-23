@@ -1,4 +1,16 @@
-const checkboxes = [
+type Checkbox = {
+  name: string
+  label: string
+  initialValue: boolean
+}
+
+type StrengthLevel = {
+  name: string
+  classNames: string
+  requiredPoints: number
+}
+
+const checkboxes: Checkbox[] = [
   {
     name: 'uppercase',
     label: 'Include Uppercase Letters',
@@ -21,7 +33,7 @@ const checkboxes = [
   }
 ]
 
-const strengthLevels = [
+const strengthLevels: StrengthLevel[] = [
   {
     name: 'Too weak!',
     classNames: 'bg-red border-red',

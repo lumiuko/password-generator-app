@@ -2,13 +2,13 @@ import { useState } from 'react'
 
 import Container from './components/Container'
 import Display from './components/Display'
-import Options from './components/Options'
+import Options, { OptionValues } from './components/Options'
 import { generatePassword } from './utils/generator'
 
 function App() {
   const [password, setPassword] = useState('')
 
-  function handleSubmit(length, options) {
+  function handleSubmit(length: number, options: OptionValues) {
     if (Object.values(options).every(option => !option) || !length) return
     const generatedPassword = generatePassword(length, options)
     setPassword(generatedPassword)

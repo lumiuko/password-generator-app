@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types'
-import { useEffect } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
-export default function Display({ password }) {
+type DisplayProps = {
+  password: string
+}
+
+export default function Display({ password }: DisplayProps) {
   const [isCopied, setIsCopied] = useState(false)
 
   function copyToClipboard() {
@@ -38,8 +40,4 @@ export default function Display({ password }) {
       </div>
     </section>
   )
-}
-
-Display.propTypes = {
-  password: PropTypes.string
 }

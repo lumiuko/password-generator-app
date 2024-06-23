@@ -1,11 +1,18 @@
-import PropTypes from 'prop-types'
-import { useId, useState } from 'react'
+import { useId, useEffect, useState } from 'react'
 import { checkboxes, strengthLevels } from '../data'
-import { useEffect } from 'react'
 
-const initialOptions = Object.fromEntries(checkboxes.map(checkbox => [checkbox.name, checkbox.initialValue]))
+export type OptionValues = {
+  [key: string]: boolean
+}
 
-export default function Options({ password, generatePassword }) {
+const initialOptions: OptionValues = Object.fromEntries(checkboxes.map(checkbox => [checkbox.name, checkbox.initialValue]))
+
+type OptionsProps = {
+  password: string
+  generatePassword: (length: number, options: OptionValues) => void
+}
+
+export default function Options({ password, generatePassword }: OptionsProps) {
   const id = useId()
   const [length, setLength] = useState(10)
   const [options, setOptions] = useState(initialOptions)
@@ -21,7 +28,7 @@ export default function Options({ password, generatePassword }) {
     setStrengthLevel(strengthIndex + 1)
   }, [password])
 
-  function handleChange({ target }) {
+  function handleChange({ target }: React.ChangeEvent<HTMLInputElement>) {
     const { name, checked } = target
 
     setOptions(prevOptions => ({
@@ -30,7 +37,7 @@ export default function Options({ password, generatePassword }) {
     }))
   }
 
-  function handleSubmit(event) {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault()
     generatePassword(length, options)
   }
@@ -53,7 +60,7 @@ export default function Options({ password, generatePassword }) {
           max={20}
           value={length}
           onChange={event => setLength(Number(event.target.value))}
-          style={{ '--value': `${(length / 20) * 100 - length / 20}%` }}
+          style={{ '--value': `${(length / 20) * 100 - length / 20}%` } as React.CSSProperties}
         />
       </div>
       <div className="flex flex-col gap-4 md:gap-5">
@@ -96,9 +103,4 @@ export default function Options({ password, generatePassword }) {
       </div>
     </form>
   )
-}
-
-Options.propTypes = {
-  password: PropTypes.string,
-  generatePassword: PropTypes.func
 }
